@@ -18,7 +18,7 @@ else
             </tr>
         </thead>
         <tbody-->
-           @* @foreach (var employee in Employees)
+    @* @foreach (var employee in Employees)
             {
                 <tr>
                     <td><img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{employee.EmployeeId}-small.jpg")" class="rounded-circle" /></td>
@@ -27,14 +27,16 @@ else
                     <td>@employee.LastName</td>
                 </tr>
             } *@
-        //</tbody>
+    //</tbody>
     //</table>
+
+    <EmployeeCardQuickView Employee="_selectedEmployee"></EmployeeCardQuickView>
 
     <div class="row">
         @foreach (var employee in Employees)
         {
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <EmployeeCard Employee="employee"></EmployeeCard>
+                <EmployeeCard Employee="employee" EmployeeQuickViewClicked="ShowQuickViewPopup"></EmployeeCard>
             </div>
         }
     </div>
