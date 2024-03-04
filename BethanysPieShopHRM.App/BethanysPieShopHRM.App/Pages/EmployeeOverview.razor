@@ -8,7 +8,7 @@
 }
 else
 {
-    <table class="table table-light">
+    <!--table class="table table-light">
         <thead>
             <tr>
                 <th />
@@ -17,8 +17,8 @@ else
                 <th>Last Name</th>
             </tr>
         </thead>
-        <tbody>
-            @foreach (var employee in Employees)
+        <tbody-->
+           @* @foreach (var employee in Employees)
             {
                 <tr>
                     <td><img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{employee.EmployeeId}-small.jpg")" class="rounded-circle" /></td>
@@ -26,7 +26,16 @@ else
                     <td>@employee.FirstName</td>
                     <td>@employee.LastName</td>
                 </tr>
-            }
-        </tbody>
-    </table>
+            } *@
+        //</tbody>
+    //</table>
+
+    <div class="row">
+        @foreach (var employee in Employees)
+        {
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                <EmployeeCard Employee="employee"></EmployeeCard>
+            </div>
+        }
+    </div>
 }
