@@ -9,6 +9,8 @@ namespace BethanysPieShopHRM.App.Pages
 
         private Employee? _selectedEmployee;
 
+        private string Title = "Employee Overview";
+
         override protected void OnInitialized()
         {
             Employees = MockDataService.Employees;
