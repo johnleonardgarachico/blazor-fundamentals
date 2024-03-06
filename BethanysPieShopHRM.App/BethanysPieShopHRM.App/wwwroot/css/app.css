@@ -610,7 +610,7 @@ progress {
 }
 
     .blockquote-footer::before {
-        content: "— ";
+        content: "â€”Â ";
     }
 
 .img-fluid {
@@ -12461,4 +12461,8 @@ h6, .h6 {
 .employee-detail, .employee-edit {
     padding: 15px;
     background-color: #FFF !important;
+}
+
+.profile-picture {
+    opacity: 0.7 !important;
 }
