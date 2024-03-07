@@ -1,9 +1,13 @@
 ﻿@page "/employeeedit"
 @page "/employeeedit/{EmployeeId}"
 
-<section class="employee-edit">
+@using BethanysPieShopHRM.Shared.Domain
+
+@if (!Saved)
+{
+    <section class="employee-edit">
     <h1 class="page-title">Details for @Employee.FirstName @Employee.LastName</h1>
-    <EditForm Model="@Employee">
+    <EditForm Model="@Employee" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
         
         <div class="row mb-3">
             <label for="lastName" class="col-form-label col-md-3">Last Name: </label>
@@ -160,5 +164,21 @@
 
         </div>
 
+        <button type="submit" class="btn btn-primary me-1">Save Employee</button>
+
+            @if (Employee.EmployeeId > 0)
+            {
+                <button type="button" class="btn btn-danger my-1" @onclick="@DeleteEmployee">
+                    Delete
+                </button>
+            }
+
     </EditForm>
-</section>
+    </section>
+}
+else
+{
+    <div class="alert @StatusClass">@Message</div>
+
+    <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToOverview">Back To Overview</button>
+}
