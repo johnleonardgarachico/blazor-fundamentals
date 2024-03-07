@@ -32,16 +32,17 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseWebAssemblyDebugging();
+
     app.UseSwagger();
     app.UseSwaggerUI();
-
-    app.UseWebAssemblyDebugging();
 }
 
 app.UseBlazorFrameworkFiles();
 
 app.UseHttpsRedirection();
 
+app.UseDefaultFiles(); // This needs to be added so that the index.html from App project will automatically be loaded when the app starts
 app.UseStaticFiles();
 
 app.UseRouting();
