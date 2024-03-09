@@ -2,9 +2,18 @@
 @using System.Reflection
 @inject LazyAssemblyLoader LazyAssemblyLoader
 
-<Router AppAssembly="@typeof(App).Assembly" AdditionalAssemblies="@lazyLoadedAssemblies" OnNavigateAsync="@OnNavigateAsync">
+<CascadingAuthenticationState>
+    <Router AppAssembly="@typeof(App).Assembly" AdditionalAssemblies="@lazyLoadedAssemblies" OnNavigateAsync="@OnNavigateAsync">
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+            <Authorizing>
+                <p>Determining session state, please wait...</p>
+            </Authorizing>
+            <NotAuthorized>
+                <h1>Sorrt</h1>
+                <p>You're not authorized to reach this page. You need to <a href="/authentication/login"></a></p>
+            </NotAuthorized>
+        </AuthorizeRouteView>
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>
     <NotFound>
@@ -14,6 +23,7 @@
         </LayoutView>
     </NotFound>
 </Router>
+</CascadingAuthenticationState>
 
 @code {
     private List<Assembly> lazyLoadedAssemblies = new List<Assembly>();

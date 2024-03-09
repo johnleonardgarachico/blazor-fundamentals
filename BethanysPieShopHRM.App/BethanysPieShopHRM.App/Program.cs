@@ -19,4 +19,10 @@ builder.Services.AddScoped<ApplicationState>(); // This is just the same with si
 
 builder.Services.AddBlazoredLocalStorage();
 
+builder.Services.AddOidcAuthentication(options =>
+{
+    builder.Configuration.Bind("Auth0", options.ProviderOptions);
+    options.ProviderOptions.ResponseType = "code";
+});
+
 await builder.Build().RunAsync();

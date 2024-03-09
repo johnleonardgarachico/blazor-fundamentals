@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShopHRM.Api", "B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabindingSample", "DatabindingSample\DatabindingSample.csproj", "{77EEDF2B-D669-428B-ACFB-24C2BED75B7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BethanysPieShopHRM.ComponentLibrary", "BethanysPieShopHRM.ComponentLibrary\BethanysPieShopHRM.ComponentLibrary.csproj", "{73AB335A-E1BD-40FA-B611-B3AD594515C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShopHRM.ComponentLibrary", "BethanysPieShopHRM.ComponentLibrary\BethanysPieShopHRM.ComponentLibrary.csproj", "{73AB335A-E1BD-40FA-B611-B3AD594515C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
