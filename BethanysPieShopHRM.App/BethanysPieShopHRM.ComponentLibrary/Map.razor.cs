@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
-namespace BethanysPieShopHRM.App.Components
+namespace BethanysPieShopHRM.ComponentLibrary
 {
     public partial class Map
     {
